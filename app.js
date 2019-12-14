@@ -1,6 +1,8 @@
 // 載入 express
 const express = require('express')
 
+var path = require('path');
+
 // 設定 Port 號
 const app = express()
 const port = process.env.PORT || 3000
@@ -18,4 +20,10 @@ require('./routes')(app)
 // 啟動 Server
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
+  console.log(path.join(__dirname, 'views'));
 })
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.set('view options', {
+  layout: false
+});
