@@ -30,6 +30,7 @@ app.use('/users', usersRouter);
 app.use('/test', testRouter);
 
 app.use('/Home', homeRouter);
+app.use('/Link', homeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
